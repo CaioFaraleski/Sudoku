@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    width: 12rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home p {
+    height: 27px;
+}
+
+.home figure {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-language {
+    height: 2rem;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 11px;
+}
+
+.btn-language:hover {
+    background-color: #e0e0e0;
+}
+
+.bandeira {
+    height: 1.2rem;
+    width: 1.9rem;
+    background-image: url(images/bandeiras/brasil.jpg);
+    background-size: 100%;
+    background-position: 50%;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+
+.btn-language figure {
+    height: 13px;
+    width: 13px;
+    margin-right: 15px;
+}
+
+figure img {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+}
