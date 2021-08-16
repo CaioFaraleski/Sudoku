@@ -13,12 +13,15 @@ header {
     width: 12rem;
     display: flex;
     justify-content: space-around;
+    margin-right: 2rem;
     font-size: 1.5rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .home p {
-    height: 27px;
+    display: flex;
+    align-items: center;
+    height: 23px;
 }
 
 .home figure {
@@ -35,7 +38,8 @@ header {
 
 .btn-language {
     height: 2rem;
-    width: 10rem;
+    width: 13rem;
+    margin-left: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +50,7 @@ header {
     background-color: #e0e0e0;
 }
 
-.bandeira {
+.flag {
     height: 1.2rem;
     width: 1.9rem;
     background-image: url(images/bandeiras/brasil.jpg);
