@@ -256,6 +256,51 @@ figure img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 5px solid #464646;
+    border-radius: 10px;
+}
+
+.sudoku div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+    color: #234fff;
+    font-family: sans-serif;
+    border: 0.5px solid #a2a2a2;
+    cursor: pointer;
+}
+
+.sudoku .r1 {
+    border-top: none;
+}
+
+.sudoku .c1 {
+    border-left: none;
+}
+
+.sudoku .c3 {
+    border-right: 3px solid #464646;
+}
+
+.sudoku .c6 {
+    border-right: 3px solid #464646;
+}
+
+.sudoku .r3 {
+    border-bottom: 3px solid #464646;
+}
+
+.sudoku .r6 {
+    border-bottom: 3px solid #464646;
+}
+
+.sudoku .c9 {
+    border-right: none;
+}
+
+.sudoku .r9 {
+    border-bottom: none;
 }
 
 body {
