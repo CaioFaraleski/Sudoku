@@ -18,8 +18,13 @@ function trocarBg() {
 }
 
 function checkContent(tag) {
+<<<<<<< HEAD
     if (tag.innerText !== "") {
         return true;
+=======
+    if (tag.text === true) {
+        return tag;
+>>>>>>> d97a38c408c2ab63051aa1ee043e54b7881e1435
     }
     else {
         return false;
@@ -27,11 +32,19 @@ function checkContent(tag) {
 }
 
 function removeFromArray(array) {
+<<<<<<< HEAD
     let arrayNumbersModified = [1,2,3,4,5,6,7,8,9];
     for (const value of array) {
         let value1 = parseInt(value);
         for (const value of arrayNumbersModified) {
             let value2 = parseInt(value);
+=======
+    let arrayNumbersModified = arrayNumbers;
+    for (const value of array) {
+        value1 = parseInt(value);
+        for (const value of arrayNumbersModified) {
+            value2 = parseInt(value);
+>>>>>>> d97a38c408c2ab63051aa1ee043e54b7881e1435
             if (value1 === value2) {
                 arrayNumbersModified.splice(arrayNumbersModified.indexOf(value2), 1);
             }
@@ -41,6 +54,7 @@ function removeFromArray(array) {
 }
 
 function differentNumbers() {
+<<<<<<< HEAD
     for (let i = 0; i < pai.children.length; i++) {
         if (!checkContent(pai.children[i])) {
             let threeClasses = [];
@@ -81,6 +95,45 @@ function differentNumbers() {
 
             console.log(arrayRCQ);
             console.log("acaba")
+=======
+    let threeClasses;
+    for (let i = 0; i < pai.children.length; i++) {
+        if (checkContent(pai.children[i]) !== true) {
+            let arrayItemsr = [];
+            let arrayItemsc = [];
+            let arrayItemsq = [];
+            threeClasses = pai.children[i].className;
+            threeClasses = threeClasses.split(" ");
+            for (let i = 0; i < pai.children.length; i++) {
+                let classes = [];
+                classes = pai.children[i].className;
+                classes = classes.split(" ");
+                if (classes[0] == threeClasses[0]) {
+                    if (checkContent(pai.children[i] === true)) {
+                        arrayItemsr += pai.children[i].text;
+                    }
+                }
+                if (classes[0] == threeClasses[0]) {
+                    if (checkContent(pai.children[i] === true)) {
+                        arrayItemsc += pai.children[i].text;
+                    }
+                }
+                if (classes[0] == threeClasses[0]) {
+                    if (checkContent(pai.children[i] === true)) {
+                        arrayItemsq += pai.children[i].text;
+                    }
+                }
+            }
+            for (let i = 0; i < pai.children.length; i++) {
+                let classes = [];
+                classes = pai.children[i].className;
+                classes = classes.split(" ");
+                if (classes[0] == threeClasses[0]) {
+                    let rand = 
+                    pai.children[i].innerHTML = `${classes}`;
+                }
+            }
+>>>>>>> d97a38c408c2ab63051aa1ee043e54b7881e1435
         }
     }
 }
@@ -140,4 +193,10 @@ pai.addEventListener('click', function(e) {
     btnClick = e.target;
     trocarBg();
     bgRowColumn(btnClick.className);
+<<<<<<< HEAD
 });
+=======
+});
+
+
+>>>>>>> d97a38c408c2ab63051aa1ee043e54b7881e1435
