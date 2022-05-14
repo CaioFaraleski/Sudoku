@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/sudoku.png" type="image/x-icon">
+    <title>Sudoku</title>
+    <script src="https://kit.fontawesome.com/9426144c6a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="home">
+                <figure><img src="./assets/sudoku.png" alt=""></figure>
+                <p>Sudoku Online</p>
+            </div>
+            <div class="buttons-header">
+                <button class="difficulty">
+                    <b>Dificuldade:</b> Fácil
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <button class="btn-language">
+                    <div class="flag"></div>
+                    <p>Português (Brasil)</p>
+                    <figure>
+                        <img src="./assets/down-arrow.png" alt="">
+                    </figure>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="game">
+            <div class="box1">
+                <div class="box-timer">
+                    <div class="timer">
+                        <button>
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="time">00:00:00</div>
+                    </div>
+                    <div>
+                        Verificador de erros
+                    </div>
+                </div>
+                <div class="sudoku">
+                    <div class="r1 c1 q1"></div>
+                    <div class="r1 c2 q1"></div>
+                    <div class="r1 c3 q1"></div>
+                    <div class="r1 c4 q2"></div>
+                    <div class="r1 c5 q2"></div>
+                    <div class="r1 c6 q2"></div>
+                    <div class="r1 c7 q3"></div>
+                    <div class="r1 c8 q3"></div>
+                    <div class="r1 c9 q3"></div>
+                    <div class="r2 c1 q1"></div>
+                    <div class="r2 c2 q1"></div>
+                    <div class="r2 c3 q1"></div>
+                    <div class="r2 c4 q2"></div>
+                    <div class="r2 c5 q2"></div>
+                    <div class="r2 c6 q2"></div>
+                    <div class="r2 c7 q3"></div>
+                    <div class="r2 c8 q3"></div>
+                    <div class="r2 c9 q3"></div>
+                    <div class="r3 c1 q1"></div>
+                    <div class="r3 c2 q1"></div>
+                    <div class="r3 c3 q1"></div>
+                    <div class="r3 c4 q2"></div>
+                    <div class="r3 c5 q2"></div>
+                    <div class="r3 c6 q2"></div>
+                    <div class="r3 c7 q3"></div>
+                    <div class="r3 c8 q3"></div>
+                    <div class="r3 c9 q3"></div>
+                    <div class="r4 c1 q4"></div>
+                    <div class="r4 c2 q4"></div>
+                    <div class="r4 c3 q4"></div>
+                    <div class="r4 c4 q5"></div>
+                    <div class="r4 c5 q5"></div>
+                    <div class="r4 c6 q5"></div>
+                    <div class="r4 c7 q6"></div>
+                    <div class="r4 c8 q6"></div>
+                    <div class="r4 c9 q6"></div>
+                    <div class="r5 c1 q4"></div>
+                    <div class="r5 c2 q4"></div>
+                    <div class="r5 c3 q4"></div>
+                    <div class="r5 c4 q5"></div>
+                    <div class="r5 c5 q5"></div>
+                    <div class="r5 c6 q5"></div>
+                    <div class="r5 c7 q6"></div>
+                    <div class="r5 c8 q6"></div>
+                    <div class="r5 c9 q6"></div>
+                    <div class="r6 c1 q4"></div>
+                    <div class="r6 c2 q4"></div>
+                    <div class="r6 c3 q4"></div>
+                    <div class="r6 c4 q5"></div>
+                    <div class="r6 c5 q5"></div>
+                    <div class="r6 c6 q5"></div>
+                    <div class="r6 c7 q6"></div>
+                    <div class="r6 c8 q6"></div>
+                    <div class="r6 c9 q6"></div>
+                    <div class="r7 c1 q7"></div>
+                    <div class="r7 c2 q7"></div>
+                    <div class="r7 c3 q7"></div>
+                    <div class="r7 c4 q8"></div>
+                    <div class="r7 c5 q8"></div>
+                    <div class="r7 c6 q8"></div>
+                    <div class="r7 c7 q9"></div>
+                    <div class="r7 c8 q9"></div>
+                    <div class="r7 c9 q9"></div>
+                    <div class="r8 c1 q7"></div>
+                    <div class="r8 c2 q7"></div>
+                    <div class="r8 c3 q7"></div>
+                    <div class="r8 c4 q8"></div>
+                    <div class="r8 c5 q8"></div>
+                    <div class="r8 c6 q8"></div>
+                    <div class="r8 c7 q9"></div>
+                    <div class="r8 c8 q9"></div>
+                    <div class="r8 c9 q9"></div>
+                    <div class="r9 c1 q7"></div>
+                    <div class="r9 c2 q7"></div>
+                    <div class="r9 c3 q7"></div>
+                    <div class="r9 c4 q8"></div>
+                    <div class="r9 c5 q8"></div>
+                    <div class="r9 c6 q8"></div>
+                    <div class="r9 c7 q9"></div>
+                    <div class="r9 c8 q9"></div>
+                    <div class="r9 c9 q9"></div>
+                </div>
+            </div>
+            <div class="box2">
+                <button class="new-game">
+                    Novo jogo
+                    <div id="bg-false" class="d-none d-flex justify-content-center align-items-center w-100 h-100">
+                        <img src="./assets/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif" id="load" class="d-noneh-100">
+                    </div>
+                </button>
+                <div class="numbers">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                </div>
+                <div class="control-buttons">
+                    <button>
+                        <i class="fas fa-undo-alt"></i>
+                    </button>
+                    <button>
+                        <i class="fas fa-lightbulb"></i>
+                    </button>
+                    <button>
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                    <button>
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
