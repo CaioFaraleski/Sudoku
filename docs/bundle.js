@@ -318,13 +318,28 @@ function getClasses() {
 }
 
 getClasses();
-pai.addEventListener('click', function (e) {
-  btnClick = e.target;
+pai.addEventListener('click', event => {
+  if (document.querySelector('.selected')) {
+    document.querySelector('.selected').classList.remove('selected');
+  }
+
+  ;
+  btnClick = event.target;
   trocarBg();
   bgRowColumn(btnClick.className);
+  event.target.classList.add('selected');
 });
 document.querySelector('.new-game').addEventListener('click', event => {
   start();
+});
+document.querySelector('.numbers').querySelectorAll('button').forEach(event => {
+  event.addEventListener('click', event => {
+    if (document.querySelector('.selected')) {
+      document.querySelector('.selected').innerText = event.target.innerText;
+    }
+
+    ;
+  });
 });
 
 function whileNumbers() {
@@ -362,8 +377,8 @@ async function start() {
         element.style.backgroundColor = '#ffffff';
       });
       setTimeout(() => {
-        resolve(console.log('oasosahdoasd'));
-      }, 1000);
+        resolve();
+      }, 200);
     } catch (e) {
       reject(e);
     }
@@ -373,6 +388,48 @@ async function start() {
     document.querySelector('#bg-false').style.opacity = '0';
     document.querySelector('#load').classList.add('d-none');
     document.querySelector('#bg-false').classList.add('d-none');
+    let sudokuNumbers = [];
+    pai.querySelectorAll('div').forEach(element => {
+      let object = {};
+      let value = element.innerText;
+      let keyClass = element.className;
+      object.class = keyClass;
+      object.text = value;
+      sudokuNumbers.push(object);
+      element.innerText = '';
+    });
+    console.log('sudokuNumbers', sudokuNumbers);
+    let sortedNumbers = [];
+
+    for (let i = 0; i < 20; i++) {
+      sortedNumbers.push(Math.floor(Math.random() * 81));
+    }
+
+    console.log('sortedNumbers', sortedNumbers);
+
+    for (let i = 0; i < sortedNumbers.length; i++) {
+      for (let j = 0; j < sudokuNumbers.length; j++) {
+        if (sortedNumbers[i] === j) {
+          let classes = sudokuNumbers[j].class;
+          console.log('classes', classes);
+          classes = classes.split(' ');
+          let classOne = classes[0];
+          console.log('classOne', classOne);
+          let classTwo = classes[1];
+          console.log('classTwo', classTwo);
+          let classThree = classes[2];
+          console.log('classThree', classThree);
+          pai.querySelectorAll('div').forEach(element => {
+            console.log('pai', element.classList[2]);
+
+            if (element.classList[0] === classOne && element.classList[1] === classTwo && element.classList[2] === classThree) {
+              console.log('pai entrou', element);
+              element.innerText = sudokuNumbers[j].text;
+            }
+          });
+        }
+      }
+    }
   });
 }
 })();
