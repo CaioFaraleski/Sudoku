@@ -9,10 +9,11 @@ let numRand;
 let btnClick;
 let btnClick1 = undefined;
 let pai = document.querySelector(".sudoku");
+let sudokuNumbers = [];
 
 function trocarBg() {
     if (btnClick1 !== btnClick) {
-        btnClick.style.backgroundColor = "#d8d7d7";
+        btnClick.style.backgroundColor = "#ebebeb";
         if (btnClick1 !== undefined) {
             btnClick1.style.backgroundColor = "#ffffff";
         }
@@ -56,17 +57,14 @@ function differentNumbers() {
                 classes = classes.split(" ");
                 if (classes[0] === threeClasses[0]) {
                     if (checkContent(pai.children[i])) {
-                        // console.log(pai.children[i].innerText)
                         arrayRCQ += Number(pai.children[i].innerText);
                     }
                 } else if (classes[1] === threeClasses[1]) {
                     if (checkContent(pai.children[i])) {
-                        // console.log(pai.children[i].innerText)
                         arrayRCQ += Number(pai.children[i].innerText);
                     }
                 } else if (classes[2] === threeClasses[2]) {
                     if (checkContent(pai.children[i])) {
-                        // console.log(pai.children[i].innerText)
                         arrayRCQ += Number(pai.children[i].innerText);
                     }
                 }
@@ -83,7 +81,12 @@ function differentNumbers() {
 
 function getClassDiv(cls) {
     for (let i = 0; i < pai.children.length; i++) {
-        if (cls === pai.children[i].className) {
+        let classs = [];
+        classs.push(pai.children[i].classList[0]);
+        classs.push(pai.children[i].classList[1]);
+        classs.push(pai.children[i].classList[2]);
+        classs = classs.join(' ')
+        if (cls === classs) {
             return pai.children[i]
         }
     }
@@ -93,7 +96,6 @@ function bgRowColumn(cls) {
     let threeClasses;
 
     cls = cls.split(" ");
-    console.log(cls);
     for (let i = 0; i < pai.children.length; i++) {
         pai.children[i].style.backgroundColor = "#ffffff"
 
@@ -104,7 +106,7 @@ function bgRowColumn(cls) {
 
         if (threeClasses[0] === cls[0] || threeClasses[1] === cls[1] || threeClasses[2] === cls[2]) {
             threeClasses = threeClasses.join(" ");
-            getClassDiv(threeClasses).style.backgroundColor = "#d8d7d7";
+            getClassDiv(threeClasses).style.backgroundColor = "#ebebeb";
 
         }
 
@@ -114,7 +116,11 @@ function bgRowColumn(cls) {
 
 function getClasses() {
     for (var i = 0; i < pai.children.length; i++) {
-        classe = pai.children[i].className;
+        let classe = []
+        classe.push(pai.children[i].classList[0]);
+        classe.push(pai.children[i].classList[1]);
+        classe.push(pai.children[i].classList[2]);
+        classe = classe.join(' ')
         arrayClasses += classe + ",";
         arrayClasses = arrayClasses.split(",");
     };
@@ -125,9 +131,14 @@ pai.addEventListener('click', event => {
     if (document.querySelector('.selected')) {
         document.querySelector('.selected').classList.remove('selected')
     };
+    let classs = [];
     btnClick = event.target;
+    classs.push(btnClick.classList[0]);
+    classs.push(btnClick.classList[1]);
+    classs.push(btnClick.classList[2]);
+    classs = classs.join(' ');
     trocarBg();
-    bgRowColumn(btnClick.className);
+    bgRowColumn(classs);
     event.target.classList.add('selected');
 });
 
@@ -140,8 +151,20 @@ document.querySelector('.numbers').querySelectorAll('button').forEach(event => {
     event.addEventListener('click', event => {
         if (document.querySelector('.selected')) {
             document.querySelector('.selected').innerText = event.target.innerText;
+            rightOrWrong();
         };
     })
+})
+
+flexSwitchCheckDefault.addEventListener('click', event => {
+    rightOrWrong();
+    if (!flexSwitchCheckDefault.checked) {
+        pai.querySelectorAll('div').forEach(element => {
+            if (element.innerText !== '' && element.classList[3] !== 'block') {
+                element.style.color = '#8a8a8a'
+            }
+        })
+    }
 })
 
 function whileNumbers() {
@@ -163,7 +186,6 @@ function whileNumbers() {
                 element.innerText = '';
             });
         }
-        console.log('.')
     }
 
     return;
@@ -197,7 +219,7 @@ async function start() {
         document.querySelector('#load').classList.add('d-none');
         document.querySelector('#bg-false').classList.add('d-none');
 
-        let sudokuNumbers = [];
+        sudokuNumbers = [];
 
         pai.querySelectorAll('div').forEach(element => {
             let object = {};
@@ -212,38 +234,29 @@ async function start() {
             element.innerText = '';
         });
 
-        console.log('sudokuNumbers', sudokuNumbers)
-
         let sortedNumbers = [];
 
         for (let i = 0; i < 20; i++) {
             sortedNumbers.push(Math.floor(Math.random() * 81));
         }
 
-        console.log('sortedNumbers', sortedNumbers)
-
         for (let i = 0; i < sortedNumbers.length; i++) {
             for (let j = 0; j < sudokuNumbers.length; j++) {
                 if (sortedNumbers[i] === j) {
 
                     let classes = sudokuNumbers[j].class;
-                    console.log('classes', classes)
-
                     classes = classes.split(' ');
+
                     let classOne = classes[0];
-                    console.log('classOne', classOne)
 
                     let classTwo = classes[1];
-                    console.log('classTwo', classTwo)
 
                     let classThree = classes[2];
-                    console.log('classThree', classThree)
 
                     pai.querySelectorAll('div').forEach(element => {
-                        console.log('pai', element.classList[2])
                         if (element.classList[0] === classOne && element.classList[1] === classTwo && element.classList[2] === classThree) {
-                            console.log('pai entrou', element)
                             element.innerText = sudokuNumbers[j].text
+                            element.classList.add('block')
                         }
                     })
 
@@ -255,4 +268,20 @@ async function start() {
 
     })
 
+}
+
+function rightOrWrong() {
+    if (flexSwitchCheckDefault.checked) {
+        for (let i = 0; i < sudokuNumbers.length; i++) {
+            if (pai.children[i].innerText !== '') {
+                if (pai.children[i].innerText !== sudokuNumbers[i].text) {
+                    pai.children[i].style.color = '#ff6868'
+                } else {
+                    if (pai.children[i].classList[3] !== 'block' && pai.children[i].classList[3] !== undefined) {
+                        pai.children[i].style.color = '#8a8a8a'
+                    }
+                }
+            }
+        }
+    }
 }

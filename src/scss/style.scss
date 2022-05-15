@@ -122,6 +122,11 @@ body {
                     height: 2rem;
                     margin-bottom: 0.5rem;
                     font-family: sans-serif;
+                    #flexSwitchCheckDefault {
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
                     .timer {
                         width: 6rem;
                         height: 1rem;
@@ -153,6 +158,9 @@ body {
                     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                     border: 5px solid #464646;
                     border-radius: 10px;
+                    .block {
+                        color: #4b4b4b;
+                    }
                     div {
                         display: flex;
                         justify-content: center;
@@ -161,6 +169,8 @@ body {
                         color: #234fff;
                         font-family: sans-serif;
                         border: 0.5px solid #a2a2a2;
+                        font-weight: 600;
+                        color: #8a8a8a;
                         cursor: pointer;
                     }
                     .r1 {
@@ -212,11 +222,14 @@ body {
                     transition: background-color .2s;
                     #bg-false {
                         position: absolute;
-                        background: #082081;
+                        background: #1f46e1;
                         border-radius: 7px;
                         opacity: 0;
                         transition: opacity .4s;
-                        filter: brightness(0.7);
+                        #load {
+                            color: #ffffff;
+                            opacity: 1;
+                        }
                     }
                     cursor: pointer;
                     &:hover {

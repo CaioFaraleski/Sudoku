@@ -43,7 +43,10 @@
                         <div class="time">00:00:00</div>
                     </div>
                     <div>
-                        Verificador de erros
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Verificador de erros</label>
+                        </div>
                     </div>
                 </div>
                 <div class="sudoku">
@@ -134,7 +137,9 @@
                 <button class="new-game">
                     Novo jogo
                     <div id="bg-false" class="d-none d-flex justify-content-center align-items-center w-100 h-100">
-                        <img src="./assets/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif" id="load" class="d-noneh-100">
+                        <div id="load" class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </button>
                 <div class="numbers">
@@ -149,9 +154,6 @@
                     <button>9</button>
                 </div>
                 <div class="control-buttons">
-                    <button>
-                        <i class="fas fa-undo-alt"></i>
-                    </button>
                     <button>
                         <i class="fas fa-lightbulb"></i>
                     </button>
