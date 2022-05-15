@@ -9,6 +9,7 @@ let numRand;
 let btnClick;
 let btnClick1 = undefined;
 let pai = document.querySelector(".sudoku");
+let checkErrorInput = document.querySelector('#flexSwitchCheckDefault');
 let sudokuNumbers = [];
 
 function trocarBg() {
@@ -127,23 +128,24 @@ function getClasses() {
 }
 getClasses();
 
-pai.addEventListener('click', event => {
-    if (document.querySelector('.selected')) {
-        document.querySelector('.selected').classList.remove('selected')
-    };
-    let classs = [];
-    btnClick = event.target;
-    classs.push(btnClick.classList[0]);
-    classs.push(btnClick.classList[1]);
-    classs.push(btnClick.classList[2]);
-    classs = classs.join(' ');
-    trocarBg();
-    bgRowColumn(classs);
-    event.target.classList.add('selected');
+pai.querySelectorAll('div').forEach(element => {
+    element.addEventListener('click', event => {
+        if (document.querySelector('.selected')) {
+            document.querySelector('.selected').classList.remove('selected')
+        };
+        let classs = [];
+        btnClick = event.target;
+        classs.push(btnClick.classList[0]);
+        classs.push(btnClick.classList[1]);
+        classs.push(btnClick.classList[2]);
+        classs = classs.join(' ');
+        trocarBg();
+        bgRowColumn(classs);
+        event.target.classList.add('selected');
+    })
 });
 
 document.querySelector('.new-game').addEventListener('click', event => {
-
     start();
 });
 
@@ -154,18 +156,71 @@ document.querySelector('.numbers').querySelectorAll('button').forEach(event => {
             rightOrWrong();
         };
     })
-})
+});
 
-flexSwitchCheckDefault.addEventListener('click', event => {
+document.addEventListener('keyup', event => {
+    if (Number(event.key) >= 1 && Number(event.key) <= 9) {
+        if (document.querySelector('.selected')) {
+            document.querySelector('.selected').innerText = event.key;
+            rightOrWrong();
+        };
+    } else if (event.key === 'Backspace') {
+        if (document.querySelector('.selected')) {
+            document.querySelector('.selected').innerText = '';
+        };
+    } else if (event.key === 'Control') {
+        if (document.querySelector('.selected')) {
+            let classs = [];
+            classs.push(document.querySelector('.selected').classList[0]);
+            classs.push(document.querySelector('.selected').classList[1]);
+            classs.push(document.querySelector('.selected').classList[2]);
+
+            classs = classs.join(' ');
+            console.log(classs)
+
+            for (let i = 0; i < sudokuNumbers.length; i++) {
+                if (sudokuNumbers[i].class === classs) {
+                    console.log(sudokuNumbers[i])
+                    document.querySelector('.selected').innerText = sudokuNumbers[i].text;
+                }
+            }
+        }
+    }
+});
+
+checkErrorInput.addEventListener('click', event => {
     rightOrWrong();
-    if (!flexSwitchCheckDefault.checked) {
+    if (!checkErrorInput.checked) {
         pai.querySelectorAll('div').forEach(element => {
             if (element.innerText !== '' && element.classList[3] !== 'block') {
                 element.style.color = '#8a8a8a'
             }
         })
     }
-})
+});
+
+document.querySelector('#eraser').addEventListener('click', event => {
+    if (document.querySelector('.selected')) {
+        document.querySelector('.selected').innerText = '';
+    };
+});
+
+document.querySelector('#tip').addEventListener('click', event => {
+    if (document.querySelector('.selected')) {
+        let classs = [];
+        classs.push(document.querySelector('.selected').classList[0]);
+        classs.push(document.querySelector('.selected').classList[1]);
+        classs.push(document.querySelector('.selected').classList[2]);
+
+        classs = classs.join(' ');
+
+        for (let i = 0; i < sudokuNumbers.length; i++) {
+            if (sudokuNumbers[i].class === classs) {
+                document.querySelector('.selected').innerText = sudokuNumbers[i].text;
+            }
+        }
+    }
+});
 
 function whileNumbers() {
     let allSquares = false
@@ -271,7 +326,7 @@ async function start() {
 }
 
 function rightOrWrong() {
-    if (flexSwitchCheckDefault.checked) {
+    if (checkErrorInput.checked) {
         for (let i = 0; i < sudokuNumbers.length; i++) {
             if (pai.children[i].innerText !== '') {
                 if (pai.children[i].innerText !== sudokuNumbers[i].text) {
@@ -285,3 +340,64 @@ function rightOrWrong() {
         }
     }
 }
+
+let sec = 1;
+let min = 0;
+let hr = 0;
+
+let timer = () => {
+    let showTime = document.querySelector('.time');
+
+    if (sec < 10 && min < 10 && hr < 10) {
+        showTime.innerText = `0${hr}:0${min}:0${sec}`;
+        countTimer();
+        return;
+    };
+    if (sec < 10 && min < 10) {
+        showTime.innerText = `${hr}:0${min}:0${sec}`;
+        countTimer();
+        return;
+    };
+    if (sec < 10 && hr < 10) {
+        showTime.innerText = `0${hr}:${min}:0${sec}`;
+        countTimer();
+        return;
+    };
+    if (min < 10 && hr < 10) {
+        showTime.innerText = `0${hr}:0${min}:${sec}`;
+        countTimer();
+        return;
+    };
+    if (sec < 10) {
+        showTime.innerText = `${hr}:${min}:0${sec}`;
+        countTimer();
+        return;
+    };
+    if (min < 10) {
+        showTime.innerText = `${hr}:0${min}:${sec}`;
+        countTimer();
+        return;
+    };
+    if (hr < 10) {
+        showTime.innerText = `0${hr}:${min}:${sec}`;
+        countTimer();
+        return;
+    };
+
+}
+
+function countTimer() {
+    sec++;
+    if (sec === 61) {
+        sec = 1;
+        min++;
+        if (min === 61) {
+            min = 1;
+            hr++;
+        }
+    }
+}
+
+
+
+let count = setInterval(timer, 1000);
