@@ -351,7 +351,6 @@ function getClassDiv(cls) {
     classs = classs.join(' ');
 
     if (cls === classs) {
-      console.log(pai.children[i]);
       return pai.children[i];
     }
   }
@@ -414,6 +413,7 @@ document.querySelector('.numbers').querySelectorAll('button').forEach(event => {
     if (document.querySelector('.selected')) {
       document.querySelector('.selected').innerText = event.target.innerText;
       rightOrWrong();
+      checkVitory();
     }
 
     ;
@@ -424,6 +424,7 @@ document.addEventListener('keyup', event => {
     if (document.querySelector('.selected')) {
       document.querySelector('.selected').innerText = event.key;
       rightOrWrong();
+      checkVitory();
     }
 
     ;
@@ -440,14 +441,14 @@ document.addEventListener('keyup', event => {
       classs.push(document.querySelector('.selected').classList[1]);
       classs.push(document.querySelector('.selected').classList[2]);
       classs = classs.join(' ');
-      console.log(classs);
 
       for (let i = 0; i < sudokuNumbers.length; i++) {
         if (sudokuNumbers[i].class === classs) {
-          console.log(sudokuNumbers[i]);
           document.querySelector('.selected').innerText = sudokuNumbers[i].text;
         }
       }
+
+      checkVitory();
     }
   }
 });
@@ -674,6 +675,20 @@ function countTimer() {
       min = 1;
       hr++;
     }
+  }
+}
+
+function checkVitory() {
+  let isVitory = true;
+
+  for (let i = 0; i < sudokuNumbers.length; i++) {
+    if (pai.children[i + 1].innerText === '' || pai.children[i + 1].innerText !== sudokuNumbers[i].text) {
+      isVitory = false;
+    }
+  }
+
+  if (isVitory) {
+    console.log("parabennnnss");
   }
 }
 })();
