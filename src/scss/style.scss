@@ -158,6 +158,12 @@ body {
                     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                     border: 5px solid #464646;
                     border-radius: 10px;
+                    position: relative;
+                    #pause-page {
+                        position: absolute;
+                        display: flex;
+                        background-color: #979797f0;
+                    }
                     .block {
                         color: #4b4b4b;
                     }

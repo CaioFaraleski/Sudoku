@@ -1,5 +1,6 @@
 import './imgs.js';
 import '../scss/style.scss';
+import './language.js';
 
 let arrayClasses = [];
 const arrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -10,7 +11,12 @@ let btnClick;
 let btnClick1 = undefined;
 let pai = document.querySelector(".sudoku");
 let checkErrorInput = document.querySelector('#flexSwitchCheckDefault');
+let buttonTimer = document.querySelector('.timer').querySelector('button');
 let sudokuNumbers = [];
+let sec = 1;
+let min = 0;
+let hr = 0;
+let count;
 
 function trocarBg() {
     if (btnClick1 !== btnClick) {
@@ -45,42 +51,56 @@ function removeFromArray(array) {
 }
 
 function differentNumbers() {
-    for (let i = 0; i < pai.children.length; i++) {
-        if (!checkContent(pai.children[i])) {
+
+    pai.querySelectorAll('div').forEach(element => {
+        if (!checkContent(element)) {
             let threeClasses = [];
             let arrayRCQ = [];
-            threeClasses = pai.children[i].className;
+            threeClasses = element.className;
             threeClasses = threeClasses.split(" ");
-            for (let i = 0; i < pai.children.length; i++) {
+            pai.querySelectorAll('div').forEach(e => {
                 let theArray = [];
                 let classes = [];
-                classes = pai.children[i].className;
+                classes = e.className;
                 classes = classes.split(" ");
                 if (classes[0] === threeClasses[0]) {
-                    if (checkContent(pai.children[i])) {
-                        arrayRCQ += Number(pai.children[i].innerText);
+                    if (checkContent(e)) {
+                        arrayRCQ += Number(e.innerText);
                     }
                 } else if (classes[1] === threeClasses[1]) {
-                    if (checkContent(pai.children[i])) {
-                        arrayRCQ += Number(pai.children[i].innerText);
+                    if (checkContent(e)) {
+                        arrayRCQ += Number(e.innerText);
                     }
                 } else if (classes[2] === threeClasses[2]) {
-                    if (checkContent(pai.children[i])) {
-                        arrayRCQ += Number(pai.children[i].innerText);
+                    if (checkContent(e)) {
+                        arrayRCQ += Number(e.innerText);
                     }
                 }
-            }
+
+            });
             arrayRCQ = removeFromArray(arrayRCQ)
             arrayRCQ = arrayRCQ.filter((item) => item !== 0)
 
             if (arrayRCQ.length !== 0) {
-                pai.children[i].innerText = arrayRCQ[Math.floor(Math.random() * arrayRCQ.length)]
+                element.innerText = arrayRCQ[Math.floor(Math.random() * arrayRCQ.length)]
             }
         }
-    }
+    });
 }
 
 function getClassDiv(cls) {
+
+    // pai.querySelectorAll('div').forEach(element => {
+    //     let classs = [];
+    //     classs.push(element.classList[0]);
+    //     classs.push(element.classList[1]);
+    //     classs.push(element.classList[2]);
+    //     classs = classs.join(' ')
+    //     if (cls === classs) {
+    //         return element
+    //     }
+    // })
+
     for (let i = 0; i < pai.children.length; i++) {
         let classs = [];
         classs.push(pai.children[i].classList[0]);
@@ -88,6 +108,7 @@ function getClassDiv(cls) {
         classs.push(pai.children[i].classList[2]);
         classs = classs.join(' ')
         if (cls === classs) {
+            console.log(pai.children[i])
             return pai.children[i]
         }
     }
@@ -95,12 +116,11 @@ function getClassDiv(cls) {
 
 function bgRowColumn(cls) {
     let threeClasses;
-
     cls = cls.split(" ");
-    for (let i = 0; i < pai.children.length; i++) {
-        pai.children[i].style.backgroundColor = "#ffffff"
 
-    }
+    pai.querySelectorAll('div').forEach(element => {
+        element.style.backgroundColor = "#ffffff";
+    });
     for (let i = 0; i < arrayClasses.length; i++) {
         threeClasses = arrayClasses[i];
         threeClasses = threeClasses.split(" ");
@@ -116,15 +136,16 @@ function bgRowColumn(cls) {
 
 
 function getClasses() {
-    for (var i = 0; i < pai.children.length; i++) {
+
+    pai.querySelectorAll('div').forEach(element => {
         let classe = []
-        classe.push(pai.children[i].classList[0]);
-        classe.push(pai.children[i].classList[1]);
-        classe.push(pai.children[i].classList[2]);
+        classe.push(element.classList[0]);
+        classe.push(element.classList[1]);
+        classe.push(element.classList[2]);
         classe = classe.join(' ')
         arrayClasses += classe + ",";
         arrayClasses = arrayClasses.split(",");
-    };
+    });
 }
 getClasses();
 
@@ -219,6 +240,20 @@ document.querySelector('#tip').addEventListener('click', event => {
                 document.querySelector('.selected').innerText = sudokuNumbers[i].text;
             }
         }
+    }
+});
+
+buttonTimer.children[0].addEventListener('click', event => {
+    if (event.target.classList[1] === 'fa-play') {
+        event.target.classList.remove('fa-play');
+        event.target.classList.add('fa-pause');
+        document.querySelector('#pause-page').style.display = 'none';
+        count = setInterval(timer, 1000);
+    } else {
+        event.target.classList.remove('fa-pause');
+        event.target.classList.add('fa-play');
+        document.querySelector('#pause-page').style.display = 'flex';
+        clearInterval(count);
     }
 });
 
@@ -321,6 +356,17 @@ async function start() {
 
         }
 
+        sec = 1;
+        min = 0;
+        hr = 0;
+
+        document.querySelector('#pause-page').style.display = 'none';
+        buttonTimer.children[0].classList.remove('fa-play');
+        buttonTimer.children[0].classList.add('fa-pause');
+        clearInterval(count)
+        count = setInterval(timer, 1000);
+
+
     })
 
 }
@@ -328,12 +374,12 @@ async function start() {
 function rightOrWrong() {
     if (checkErrorInput.checked) {
         for (let i = 0; i < sudokuNumbers.length; i++) {
-            if (pai.children[i].innerText !== '') {
-                if (pai.children[i].innerText !== sudokuNumbers[i].text) {
-                    pai.children[i].style.color = '#ff6868'
+            if (pai.children[i + 1].innerText !== '') {
+                if (pai.children[i + 1].innerText !== sudokuNumbers[i].text) {
+                    pai.children[i + 1].style.color = '#ff6868'
                 } else {
-                    if (pai.children[i].classList[3] !== 'block' && pai.children[i].classList[3] !== undefined) {
-                        pai.children[i].style.color = '#8a8a8a'
+                    if (pai.children[i + 1].classList[3] !== 'block' && pai.children[i + 1].classList[3] !== undefined) {
+                        pai.children[i + 1].style.color = '#8a8a8a'
                     }
                 }
             }
@@ -341,9 +387,6 @@ function rightOrWrong() {
     }
 }
 
-let sec = 1;
-let min = 0;
-let hr = 0;
 
 let timer = () => {
     let showTime = document.querySelector('.time');
@@ -397,7 +440,3 @@ function countTimer() {
         }
     }
 }
-
-
-
-let count = setInterval(timer, 1000);

@@ -11279,6 +11279,12 @@ body main .game .box1 .sudoku {
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   border: 5px solid #464646;
   border-radius: 10px;
+  position: relative;
+}
+body main .game .box1 .sudoku #pause-page {
+  position: absolute;
+  display: flex;
+  background-color: rgba(151, 151, 151, 0.9411764706);
 }
 body main .game .box1 .sudoku .block {
   color: #4b4b4b;
