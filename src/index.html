@@ -13,23 +13,45 @@
 <body>
     <header>
         <div class="container">
-            <div class="home">
+            <div class="home d-flex align-items-center justify-content-around">
                 <figure><img src="./assets/sudoku.png" alt=""></figure>
-                <p>Sudoku Online</p>
+                <p class="m-0">Sudoku Online</p>
             </div>
             <div class="buttons-header">
-
-                <button class="difficulty">
-                    <b>Dificuldade:</b> Fácil
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-                <button class="btn-language">
-                    <div class="flag"></div>
-                    <p>Português (Brasil)</p>
-                    <figure>
-                        <img src="./assets/down-arrow.png" alt="">
-                    </figure>
-                </button>
+                <div>
+                    <button class="difficulty p-2">
+                        <strong class="pe-1">Dificuldade:</strong>
+                        <p class="pe-1 m-0">Fácil</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dif-options flex-column w-100 py-1">
+                        <div class="w-100 ps-2 py-1">Fácil</div>
+                        <div class="w-100 ps-2 py-1">Médio</div>
+                        <div class="w-100 ps-2 py-1">Difícil</div>
+                        <div class="w-100 ps-2 py-1">Proffisional</div>
+                        <div class="w-100 ps-2 py-1">Diabólico</div>
+                    </div>
+                </div>
+                <div class="ms-5">
+                    <button class="btn-language p-2">
+                        <div class="flag me-1"></div>
+                        <p class="pe-1">Português (Brasil)</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-options flex-column w-100 py-1">
+                        <div class="w-100 ps-2 py-1"><img src="./assets/brasil.png" alt=""> Português</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/estados-unidos.png" alt=""> English</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/china.png" alt=""> 中國人</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/india.png" alt=""> हिन्दी</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/espanha.png" alt=""> Espanõl</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/franca.png" alt=""> Français</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/emirados.png" alt=""> عربي</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/russia.png" alt=""> Русский</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/indonesia.png" alt=""> bahasa Indonesia</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/alemanha.png" alt=""> Deutsch</div>
+                        <div class="w-100 ps-2 py-1"><img src="./assets/japao.png" alt=""> 日本</div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -54,87 +76,87 @@
                     <span id="pause-page" class="w-100 h-100 justify-content-center align-items-center">
                         <i class="fas fa-play"></i>
                     </span>
-                    <div class="r1 c1 q1"></div>
-                    <div class="r1 c2 q1"></div>
-                    <div class="r1 c3 q1"></div>
-                    <div class="r1 c4 q2"></div>
-                    <div class="r1 c5 q2"></div>
-                    <div class="r1 c6 q2"></div>
-                    <div class="r1 c7 q3"></div>
-                    <div class="r1 c8 q3"></div>
-                    <div class="r1 c9 q3"></div>
-                    <div class="r2 c1 q1"></div>
-                    <div class="r2 c2 q1"></div>
-                    <div class="r2 c3 q1"></div>
-                    <div class="r2 c4 q2"></div>
-                    <div class="r2 c5 q2"></div>
-                    <div class="r2 c6 q2"></div>
-                    <div class="r2 c7 q3"></div>
-                    <div class="r2 c8 q3"></div>
-                    <div class="r2 c9 q3"></div>
-                    <div class="r3 c1 q1"></div>
-                    <div class="r3 c2 q1"></div>
-                    <div class="r3 c3 q1"></div>
-                    <div class="r3 c4 q2"></div>
-                    <div class="r3 c5 q2"></div>
-                    <div class="r3 c6 q2"></div>
-                    <div class="r3 c7 q3"></div>
-                    <div class="r3 c8 q3"></div>
-                    <div class="r3 c9 q3"></div>
-                    <div class="r4 c1 q4"></div>
-                    <div class="r4 c2 q4"></div>
-                    <div class="r4 c3 q4"></div>
-                    <div class="r4 c4 q5"></div>
-                    <div class="r4 c5 q5"></div>
-                    <div class="r4 c6 q5"></div>
-                    <div class="r4 c7 q6"></div>
-                    <div class="r4 c8 q6"></div>
-                    <div class="r4 c9 q6"></div>
-                    <div class="r5 c1 q4"></div>
-                    <div class="r5 c2 q4"></div>
-                    <div class="r5 c3 q4"></div>
-                    <div class="r5 c4 q5"></div>
-                    <div class="r5 c5 q5"></div>
-                    <div class="r5 c6 q5"></div>
-                    <div class="r5 c7 q6"></div>
-                    <div class="r5 c8 q6"></div>
-                    <div class="r5 c9 q6"></div>
-                    <div class="r6 c1 q4"></div>
-                    <div class="r6 c2 q4"></div>
-                    <div class="r6 c3 q4"></div>
-                    <div class="r6 c4 q5"></div>
-                    <div class="r6 c5 q5"></div>
-                    <div class="r6 c6 q5"></div>
-                    <div class="r6 c7 q6"></div>
-                    <div class="r6 c8 q6"></div>
-                    <div class="r6 c9 q6"></div>
-                    <div class="r7 c1 q7"></div>
-                    <div class="r7 c2 q7"></div>
-                    <div class="r7 c3 q7"></div>
-                    <div class="r7 c4 q8"></div>
-                    <div class="r7 c5 q8"></div>
-                    <div class="r7 c6 q8"></div>
-                    <div class="r7 c7 q9"></div>
-                    <div class="r7 c8 q9"></div>
-                    <div class="r7 c9 q9"></div>
-                    <div class="r8 c1 q7"></div>
-                    <div class="r8 c2 q7"></div>
-                    <div class="r8 c3 q7"></div>
-                    <div class="r8 c4 q8"></div>
-                    <div class="r8 c5 q8"></div>
-                    <div class="r8 c6 q8"></div>
-                    <div class="r8 c7 q9"></div>
-                    <div class="r8 c8 q9"></div>
-                    <div class="r8 c9 q9"></div>
-                    <div class="r9 c1 q7"></div>
-                    <div class="r9 c2 q7"></div>
-                    <div class="r9 c3 q7"></div>
-                    <div class="r9 c4 q8"></div>
-                    <div class="r9 c5 q8"></div>
-                    <div class="r9 c6 q8"></div>
-                    <div class="r9 c7 q9"></div>
-                    <div class="r9 c8 q9"></div>
-                    <div class="r9 c9 q9"></div>
+                    <div id="1" class="r1 c1 q1"></div>
+                    <div id="2" class="r1 c2 q1"></div>
+                    <div id="3" class="r1 c3 q1"></div>
+                    <div id="4" class="r1 c4 q2"></div>
+                    <div id="5" class="r1 c5 q2"></div>
+                    <div id="6" class="r1 c6 q2"></div>
+                    <div id="7" class="r1 c7 q3"></div>
+                    <div id="8" class="r1 c8 q3"></div>
+                    <div id="9" class="r1 c9 q3"></div>
+                    <div id="10" class="r2 c1 q1"></div>
+                    <div id="11" class="r2 c2 q1"></div>
+                    <div id="12" class="r2 c3 q1"></div>
+                    <div id="13" class="r2 c4 q2"></div>
+                    <div id="14" class="r2 c5 q2"></div>
+                    <div id="15" class="r2 c6 q2"></div>
+                    <div id="16" class="r2 c7 q3"></div>
+                    <div id="17" class="r2 c8 q3"></div>
+                    <div id="18" class="r2 c9 q3"></div>
+                    <div id="19" class="r3 c1 q1"></div>
+                    <div id="20" class="r3 c2 q1"></div>
+                    <div id="21" class="r3 c3 q1"></div>
+                    <div id="22" class="r3 c4 q2"></div>
+                    <div id="23" class="r3 c5 q2"></div>
+                    <div id="24" class="r3 c6 q2"></div>
+                    <div id="25" class="r3 c7 q3"></div>
+                    <div id="26" class="r3 c8 q3"></div>
+                    <div id="27" class="r3 c9 q3"></div>
+                    <div id="28" class="r4 c1 q4"></div>
+                    <div id="29" class="r4 c2 q4"></div>
+                    <div id="30" class="r4 c3 q4"></div>
+                    <div id="31" class="r4 c4 q5"></div>
+                    <div id="32" class="r4 c5 q5"></div>
+                    <div id="33" class="r4 c6 q5"></div>
+                    <div id="34" class="r4 c7 q6"></div>
+                    <div id="35" class="r4 c8 q6"></div>
+                    <div id="36" class="r4 c9 q6"></div>
+                    <div id="37" class="r5 c1 q4"></div>
+                    <div id="38" class="r5 c2 q4"></div>
+                    <div id="39" class="r5 c3 q4"></div>
+                    <div id="40" class="r5 c4 q5"></div>
+                    <div id="41" class="r5 c5 q5"></div>
+                    <div id="42" class="r5 c6 q5"></div>
+                    <div id="43" class="r5 c7 q6"></div>
+                    <div id="44" class="r5 c8 q6"></div>
+                    <div id="45" class="r5 c9 q6"></div>
+                    <div id="46" class="r6 c1 q4"></div>
+                    <div id="47" class="r6 c2 q4"></div>
+                    <div id="48" class="r6 c3 q4"></div>
+                    <div id="49" class="r6 c4 q5"></div>
+                    <div id="50" class="r6 c5 q5"></div>
+                    <div id="51" class="r6 c6 q5"></div>
+                    <div id="52" class="r6 c7 q6"></div>
+                    <div id="53" class="r6 c8 q6"></div>
+                    <div id="54" class="r6 c9 q6"></div>
+                    <div id="55" class="r7 c1 q7"></div>
+                    <div id="56" class="r7 c2 q7"></div>
+                    <div id="57" class="r7 c3 q7"></div>
+                    <div id="58" class="r7 c4 q8"></div>
+                    <div id="59" class="r7 c5 q8"></div>
+                    <div id="60" class="r7 c6 q8"></div>
+                    <div id="61" class="r7 c7 q9"></div>
+                    <div id="62" class="r7 c8 q9"></div>
+                    <div id="63" class="r7 c9 q9"></div>
+                    <div id="64" class="r8 c1 q7"></div>
+                    <div id="65" class="r8 c2 q7"></div>
+                    <div id="66" class="r8 c3 q7"></div>
+                    <div id="67" class="r8 c4 q8"></div>
+                    <div id="68" class="r8 c5 q8"></div>
+                    <div id="69" class="r8 c6 q8"></div>
+                    <div id="70" class="r8 c7 q9"></div>
+                    <div id="71" class="r8 c8 q9"></div>
+                    <div id="72" class="r8 c9 q9"></div>
+                    <div id="73" class="r9 c1 q7"></div>
+                    <div id="74" class="r9 c2 q7"></div>
+                    <div id="75" class="r9 c3 q7"></div>
+                    <div id="76" class="r9 c4 q8"></div>
+                    <div id="77" class="r9 c5 q8"></div>
+                    <div id="78" class="r9 c6 q8"></div>
+                    <div id="79" class="r9 c7 q9"></div>
+                    <div id="80" class="r9 c8 q9"></div>
+                    <div id="81" class="r9 c9 q9"></div>
                 </div>
             </div>
             <div class="box2">

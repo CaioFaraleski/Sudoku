@@ -2,6 +2,12 @@ import './imgs.js';
 import '../scss/style.scss';
 import './language.js';
 
+//facil: 33
+//medio: 30
+//dificil: 28
+//profissional: 24
+//diabolico: 22
+
 let arrayClasses = [];
 const arrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let classe = "";
@@ -244,16 +250,19 @@ document.querySelector('#tip').addEventListener('click', event => {
 });
 
 buttonTimer.children[0].addEventListener('click', event => {
-    if (event.target.classList[1] === 'fa-play') {
-        event.target.classList.remove('fa-play');
-        event.target.classList.add('fa-pause');
-        document.querySelector('#pause-page').style.display = 'none';
-        count = setInterval(timer, 1000);
-    } else {
-        event.target.classList.remove('fa-pause');
-        event.target.classList.add('fa-play');
-        document.querySelector('#pause-page').style.display = 'flex';
-        clearInterval(count);
+    console.log(sudokuNumbers)
+    if (sudokuNumbers.length >= 1) {
+        if (event.target.classList[1] === 'fa-play') {
+            event.target.classList.remove('fa-play');
+            event.target.classList.add('fa-pause');
+            document.querySelector('#pause-page').style.display = 'none';
+            count = setInterval(timer, 1000);
+        } else {
+            event.target.classList.remove('fa-pause');
+            event.target.classList.add('fa-play');
+            document.querySelector('#pause-page').style.display = 'flex';
+            clearInterval(count);
+        }
     }
 });
 
@@ -326,7 +335,7 @@ async function start() {
 
         let sortedNumbers = [];
 
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 23; i++) {
             sortedNumbers.push(Math.floor(Math.random() * 81));
         }
 

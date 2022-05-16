@@ -7,8 +7,7 @@ module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, 'src/js/index.js'),
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.(js|ts)$/,
                 exclude: /node_modules/,
                 use: 'babel-loader',

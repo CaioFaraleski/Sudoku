@@ -11145,8 +11145,6 @@ body header .container {
 }
 body header .container .home {
   width: 12rem;
-  display: flex;
-  justify-content: space-around;
   margin-right: 2rem;
   font-size: 1.5rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -11164,15 +11162,53 @@ body header .container .home p {
 body header .container .buttons-header {
   display: flex;
   justify-content: space-between;
-  width: 24rem;
-  height: 2rem;
+  align-items: center;
 }
 body header .container .buttons-header button:hover {
   background-color: #e0e0e0;
 }
+body header .container .buttons-header div {
+  position: relative;
+}
+body header .container .buttons-header div .dif-options {
+  display: none;
+  position: absolute;
+  bottom: -2;
+  border-radius: 0.4rem;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 10;
+}
+body header .container .buttons-header div .dif-options div:hover {
+  background-color: #d6d6d6;
+}
+body header .container .buttons-header div {
+  position: relative;
+}
+body header .container .buttons-header div .lang-options {
+  height: 20rem;
+  display: none;
+  position: absolute;
+  bottom: -2;
+  border-radius: 0.4rem;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 10;
+}
+body header .container .buttons-header div .lang-options div {
+  height: 9%;
+}
+body header .container .buttons-header div .lang-options div img {
+  height: 90%;
+}
+body header .container .buttons-header div .lang-options div:hover {
+  background-color: #d6d6d6;
+}
 body header .container .buttons-header .difficulty {
-  width: 9rem;
-  height: 2rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11187,9 +11223,6 @@ body header .container .buttons-header .difficulty i {
   color: #4f4f4f;
 }
 body header .container .buttons-header .btn-language {
-  height: 2rem;
-  width: 13rem;
-  margin-left: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11208,11 +11241,6 @@ body header .container .buttons-header .btn-language .flag {
   background-position: 50%;
   border-radius: 4px;
   margin-left: 15px;
-}
-body header .container .buttons-header .btn-language figure {
-  height: 13px;
-  width: 13px;
-  margin-right: 15px;
 }
 body header .container .buttons-header .btn-language p {
   margin: 0;
@@ -11284,7 +11312,10 @@ body main .game .box1 .sudoku {
 body main .game .box1 .sudoku #pause-page {
   position: absolute;
   display: flex;
-  background-color: rgba(151, 151, 151, 0.9411764706);
+  background-color: #979797;
+}
+body main .game .box1 .sudoku #pause-page i {
+  font-size: 5rem;
 }
 body main .game .box1 .sudoku .block {
   color: #4b4b4b;

@@ -16,6 +16,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_images_return_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/images/return.png */ "./src/assets/images/return.png");
 /* harmony import */ var _assets_images_sudoku_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/images/sudoku.png */ "./src/assets/images/sudoku.png");
 /* harmony import */ var _assets_images_ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200_gif__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/images/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif */ "./src/assets/images/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif");
+/* harmony import */ var _assets_images_bandeiras_brasil_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../assets/images/bandeiras/brasil.png */ "./src/assets/images/bandeiras/brasil.png");
+/* harmony import */ var _assets_images_bandeiras_estados_unidos_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/images/bandeiras/estados-unidos.png */ "./src/assets/images/bandeiras/estados-unidos.png");
+/* harmony import */ var _assets_images_bandeiras_china_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/images/bandeiras/china.png */ "./src/assets/images/bandeiras/china.png");
+/* harmony import */ var _assets_images_bandeiras_india_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/images/bandeiras/india.png */ "./src/assets/images/bandeiras/india.png");
+/* harmony import */ var _assets_images_bandeiras_espanha_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../assets/images/bandeiras/espanha.png */ "./src/assets/images/bandeiras/espanha.png");
+/* harmony import */ var _assets_images_bandeiras_franca_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../assets/images/bandeiras/franca.png */ "./src/assets/images/bandeiras/franca.png");
+/* harmony import */ var _assets_images_bandeiras_emirados_png__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../assets/images/bandeiras/emirados.png */ "./src/assets/images/bandeiras/emirados.png");
+/* harmony import */ var _assets_images_bandeiras_russia_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../assets/images/bandeiras/russia.png */ "./src/assets/images/bandeiras/russia.png");
+/* harmony import */ var _assets_images_bandeiras_indonesia_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../assets/images/bandeiras/indonesia.png */ "./src/assets/images/bandeiras/indonesia.png");
+/* harmony import */ var _assets_images_bandeiras_alemanha_png__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../assets/images/bandeiras/alemanha.png */ "./src/assets/images/bandeiras/alemanha.png");
+/* harmony import */ var _assets_images_bandeiras_japao_png__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../assets/images/bandeiras/japao.png */ "./src/assets/images/bandeiras/japao.png");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,6 +79,127 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 module.exports = __webpack_require__.p + "assets/ba4eeed06a8f9efb0d7b5ad26f1f8d45_w200.gif";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/alemanha.png":
+/*!**************************************************!*\
+  !*** ./src/assets/images/bandeiras/alemanha.png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/alemanha.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/brasil.png":
+/*!************************************************!*\
+  !*** ./src/assets/images/bandeiras/brasil.png ***!
+  \************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/brasil.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/china.png":
+/*!***********************************************!*\
+  !*** ./src/assets/images/bandeiras/china.png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/china.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/emirados.png":
+/*!**************************************************!*\
+  !*** ./src/assets/images/bandeiras/emirados.png ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/emirados.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/espanha.png":
+/*!*************************************************!*\
+  !*** ./src/assets/images/bandeiras/espanha.png ***!
+  \*************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/espanha.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/estados-unidos.png":
+/*!********************************************************!*\
+  !*** ./src/assets/images/bandeiras/estados-unidos.png ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/estados-unidos.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/franca.png":
+/*!************************************************!*\
+  !*** ./src/assets/images/bandeiras/franca.png ***!
+  \************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/franca.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/india.png":
+/*!***********************************************!*\
+  !*** ./src/assets/images/bandeiras/india.png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/india.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/indonesia.png":
+/*!***************************************************!*\
+  !*** ./src/assets/images/bandeiras/indonesia.png ***!
+  \***************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/indonesia.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/japao.png":
+/*!***********************************************!*\
+  !*** ./src/assets/images/bandeiras/japao.png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/japao.png";
+
+/***/ }),
+
+/***/ "./src/assets/images/bandeiras/russia.png":
+/*!************************************************!*\
+  !*** ./src/assets/images/bandeiras/russia.png ***!
+  \************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "assets/russia.png";
 
 /***/ }),
 
@@ -240,6 +383,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_language_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
+ //facil: 33
+//medio: 30
+//dificil: 28
+//profissional: 24
+//diabolico: 22
 
 let arrayClasses = [];
 const arrayNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -486,16 +634,20 @@ document.querySelector('#tip').addEventListener('click', event => {
   }
 });
 buttonTimer.children[0].addEventListener('click', event => {
-  if (event.target.classList[1] === 'fa-play') {
-    event.target.classList.remove('fa-play');
-    event.target.classList.add('fa-pause');
-    document.querySelector('#pause-page').style.display = 'none';
-    count = setInterval(timer, 1000);
-  } else {
-    event.target.classList.remove('fa-pause');
-    event.target.classList.add('fa-play');
-    document.querySelector('#pause-page').style.display = 'flex';
-    clearInterval(count);
+  console.log(sudokuNumbers);
+
+  if (sudokuNumbers.length >= 1) {
+    if (event.target.classList[1] === 'fa-play') {
+      event.target.classList.remove('fa-play');
+      event.target.classList.add('fa-pause');
+      document.querySelector('#pause-page').style.display = 'none';
+      count = setInterval(timer, 1000);
+    } else {
+      event.target.classList.remove('fa-pause');
+      event.target.classList.add('fa-play');
+      document.querySelector('#pause-page').style.display = 'flex';
+      clearInterval(count);
+    }
   }
 });
 
@@ -555,7 +707,7 @@ async function start() {
     });
     let sortedNumbers = [];
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 23; i++) {
       sortedNumbers.push(Math.floor(Math.random() * 81));
     }
 

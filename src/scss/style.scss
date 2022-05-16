@@ -1,4 +1,4 @@
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap';
 * {
     margin: 0;
     padding: 0;
@@ -22,8 +22,6 @@ body {
             align-items: center;
             .home {
                 width: 12rem;
-                display: flex;
-                justify-content: space-around;
                 margin-right: 2rem;
                 font-size: 1.5rem;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,16 +39,56 @@ body {
             .buttons-header {
                 display: flex;
                 justify-content: space-between;
-                width: 24rem;
-                height: 2rem;
+                align-items: center;
                 button {
                     &:hover {
                         background-color: #e0e0e0;
                     }
                 }
+                div {
+                    position: relative;
+                    .dif-options {
+                        display: none;
+                        position: absolute;
+                        bottom: -2;
+                        border-radius: .4rem;
+                        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
+                        background-color: #ffffff;
+                        font-size: .9rem;
+                        font-weight: 600;
+                        z-index: 10;
+                        div {
+                            &:hover {
+                                background-color: #d6d6d6;
+                            }
+                        }
+                    }
+                }
+                div {
+                    position: relative;
+                    .lang-options {
+                        height: 20rem;
+                        display: none;
+                        position: absolute;
+                        bottom: -2;
+                        border-radius: .4rem;
+                        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
+                        background-color: #ffffff;
+                        font-size: .9rem;
+                        font-weight: 600;
+                        z-index: 10;
+                        div {
+                            height: 9%;
+                            img {
+                                height: 90%;
+                            }
+                            &:hover {
+                                background-color: #d6d6d6;
+                            }
+                        }
+                    }
+                }
                 .difficulty {
-                    width: 9rem;
-                    height: 2rem;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
@@ -65,9 +103,6 @@ body {
                     }
                 }
                 .btn-language {
-                    height: 2rem;
-                    width: 13rem;
-                    margin-left: 2rem;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -85,11 +120,6 @@ body {
                         background-position: 50%;
                         border-radius: 4px;
                         margin-left: 15px;
-                    }
-                    figure {
-                        height: 13px;
-                        width: 13px;
-                        margin-right: 15px;
                     }
                     p {
                         margin: 0;
@@ -162,7 +192,10 @@ body {
                     #pause-page {
                         position: absolute;
                         display: flex;
-                        background-color: #979797f0;
+                        background-color: #979797;
+                        i {
+                            font-size: 5rem;
+                        }
                     }
                     .block {
                         color: #4b4b4b;
