@@ -140,6 +140,7 @@ body {
     main {
         display: flex;
         justify-content: center;
+        user-select: none;
         .game {
             display: flex;
             justify-content: center;
@@ -191,7 +192,6 @@ body {
                 .sudoku {
                     width: 30rem;
                     height: 30rem;
-                    border: 1px solid black;
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -219,7 +219,10 @@ body {
                         border: 0.5px solid #a2a2a2;
                         font-weight: 600;
                         color: #8a8a8a;
-                        cursor: pointer;
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #bbbbbb !important;
+                        }
                     }
                     .r1 {
                         border-top: none;

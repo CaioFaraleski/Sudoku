@@ -222,6 +222,51 @@ document.addEventListener('keyup', event => {
             }
             checkVitory();
         }
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        let numberCase;
+
+        if (document.querySelector('.selected')) {
+            numberCase = Number(document.querySelector('.selected').id)
+            document.querySelector('.selected').classList.remove('selected')
+        } else {
+            numberCase = 41;
+        }
+
+
+        switch (event.key) {
+            case 'ArrowLeft':
+                numberCase--;
+                console.log(numberCase)
+                break;
+            case 'ArrowRight':
+                numberCase++;
+                console.log(numberCase)
+
+                break;
+            case 'ArrowUp':
+                numberCase -= 9;
+                console.log(numberCase)
+
+                break;
+            case 'ArrowDown':
+                numberCase += 9;
+                console.log(numberCase)
+
+                break;
+
+            default:
+                break;
+        }
+        let classs = [];
+        // console.log(document.querySelector(`#${numberCase}`))
+        btnClick = document.getElementById(numberCase);
+        classs.push(btnClick.classList[0]);
+        classs.push(btnClick.classList[1]);
+        classs.push(btnClick.classList[2]);
+        classs = classs.join(' ');
+        trocarBg();
+        bgRowColumn(classs);
+        document.getElementById(numberCase).classList.add('selected');
     }
 });
 

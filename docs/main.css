@@ -11257,6 +11257,7 @@ body header .container .buttons-header .btn-language p {
 body main {
   display: flex;
   justify-content: center;
+  user-select: none;
 }
 body main .game {
   display: flex;
@@ -11310,7 +11311,6 @@ body main .game .box1 .box-timer .timer button:hover {
 body main .game .box1 .sudoku {
   width: 30rem;
   height: 30rem;
-  border: 1px solid black;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -11339,7 +11339,10 @@ body main .game .box1 .sudoku div {
   border: 0.5px solid #a2a2a2;
   font-weight: 600;
   color: #8a8a8a;
+}
+body main .game .box1 .sudoku div:hover {
   cursor: pointer;
+  background-color: #bbbbbb !important;
 }
 body main .game .box1 .sudoku .r1 {
   border-top: none;
