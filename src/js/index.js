@@ -24,6 +24,16 @@ let min = 0;
 let hr = 0;
 let count;
 
+let selectedDifficulty;
+
+if (localStorage.getItem('difficulty')) {
+    document.querySelector('#selectedDifficulty').innerText = localStorage.getItem('difficulty');
+    selectedDifficulty = localStorage.getItem('difficulty');
+} else {
+    document.querySelector('#selectedDifficulty').innerText = 'Fácil';
+    selectedDifficulty = document.querySelector('#selectedDifficulty').innerText;
+}
+
 function trocarBg() {
     if (btnClick1 !== btnClick) {
         btnClick.style.backgroundColor = "#ebebeb";
@@ -265,6 +275,75 @@ buttonTimer.children[0].addEventListener('click', event => {
         }
     }
 });
+
+document.querySelector('.difficulty').addEventListener('click', event => {
+    if (document.querySelector('.difficulty').querySelector('i').classList[1] === 'fa-chevron-down') {
+        document.querySelector('.difficulty').querySelector('i').classList.remove('fa-chevron-down');
+        document.querySelector('.difficulty').querySelector('i').classList.add('fa-chevron-up');
+        document.querySelector('.dif-options').style.display = 'flex';
+    } else {
+        document.querySelector('.difficulty').querySelector('i').classList.remove('fa-chevron-up');
+        document.querySelector('.difficulty').querySelector('i').classList.add('fa-chevron-down');
+        document.querySelector('.dif-options').style.display = 'none';
+    }
+    document.querySelector('.lang-options').style.display = 'none';
+    document.querySelector('.btn-language').querySelector('i').classList.remove('fa-chevron-up');
+    document.querySelector('.btn-language').querySelector('i').classList.add('fa-chevron-down');
+});
+
+document.querySelector('.dif-options').querySelectorAll('div').forEach(element => {
+    element.addEventListener('click', event => {
+        document.querySelector('.difficulty').querySelector('p').innerText = event.target.innerText;
+        localStorage.setItem('difficulty', event.target.innerText)
+        document.querySelector('.dif-options').style.display = 'none';
+        document.querySelector('.difficulty').querySelector('i').classList.remove('fa-chevron-up');
+        document.querySelector('.difficulty').querySelector('i').classList.add('fa-chevron-down');
+    })
+});
+
+document.querySelector('.btn-language').addEventListener('click', event => {
+    if (document.querySelector('.btn-language').querySelector('i').classList[1] === 'fa-chevron-down') {
+        document.querySelector('.btn-language').querySelector('i').classList.remove('fa-chevron-down');
+        document.querySelector('.btn-language').querySelector('i').classList.add('fa-chevron-up');
+        document.querySelector('.lang-options').style.display = 'flex';
+    } else {
+        document.querySelector('.btn-language').querySelector('i').classList.remove('fa-chevron-up');
+        document.querySelector('.btn-language').querySelector('i').classList.add('fa-chevron-down');
+        document.querySelector('.lang-options').style.display = 'none';
+    }
+    document.querySelector('.dif-options').style.display = 'none';
+    document.querySelector('.difficulty').querySelector('i').classList.remove('fa-chevron-up');
+    document.querySelector('.difficulty').querySelector('i').classList.add('fa-chevron-down');
+});
+
+document.querySelector('.lang-options').querySelectorAll('div').forEach(element => {
+    element.addEventListener('click', event => {
+        document.querySelector('.btn-language').querySelector('p').innerText = event.target.innerText;
+        document.querySelector('.btn-language').querySelector('img').src = event.target.children[0].src;
+        localStorage.setItem('btn-language', event.target.innerText)
+        document.querySelector('.lang-options').style.display = 'none';
+        document.querySelector('.btn-language').querySelector('i').classList.remove('fa-chevron-up');
+        document.querySelector('.btn-language').querySelector('i').classList.add('fa-chevron-down');
+    })
+});
+
+document.addEventListener('click', event => {
+    if (document.querySelector('.lang-options').style.display === 'flex') {
+        if (event.target !== document.querySelector('.btn-language') && event.target !== document.querySelector('.btn-language').children[1] && event.target !== document.querySelector('.btn-language').children[0] && event.target !== document.querySelector('.btn-language').children[2]) {
+            document.querySelector('.lang-options').style.display = 'none';
+            document.querySelector('.btn-language').querySelector('i').classList.remove('fa-chevron-up');
+            document.querySelector('.btn-language').querySelector('i').classList.add('fa-chevron-down');
+        }
+    }
+    if (document.querySelector('.dif-options').style.display === 'flex') {
+        if (event.target !== document.querySelector('.difficulty') && event.target !== document.querySelector('.difficulty').children[0] && event.target !== document.querySelector('.difficulty').children[1] && event.target !== document.querySelector('.difficulty').children[2]) {
+            document.querySelector('.dif-options').style.display = 'none';
+            document.querySelector('.difficulty').querySelector('i').classList.remove('fa-chevron-up');
+            document.querySelector('.difficulty').querySelector('i').classList.add('fa-chevron-down');
+        }
+    }
+
+})
 
 function whileNumbers() {
     let allSquares = false

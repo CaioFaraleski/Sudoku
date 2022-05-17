@@ -89,6 +89,7 @@ body {
                     }
                 }
                 .difficulty {
+                    min-width: 200px;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
@@ -98,11 +99,16 @@ body {
                     font-family: sans-serif;
                     font-size: 0.9rem;
                     cursor: pointer;
+                    p {
+                        min-width: 75px;
+                    }
                     i {
                         color: #4f4f4f;
                     }
                 }
                 .btn-language {
+                    min-width: 176px;
+                    height: 37.6px;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -112,6 +118,9 @@ body {
                     cursor: pointer;
                     font-family: sans-serif;
                     font-size: 0.9rem;
+                    p {
+                        min-width: 118px;
+                    }
                     .flag {
                         height: 1.2rem;
                         width: 1.9rem;

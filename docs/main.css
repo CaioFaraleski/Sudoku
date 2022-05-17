@@ -11209,6 +11209,7 @@ body header .container .buttons-header div .lang-options div:hover {
   background-color: #d6d6d6;
 }
 body header .container .buttons-header .difficulty {
+  min-width: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11219,10 +11220,15 @@ body header .container .buttons-header .difficulty {
   font-size: 0.9rem;
   cursor: pointer;
 }
+body header .container .buttons-header .difficulty p {
+  min-width: 75px;
+}
 body header .container .buttons-header .difficulty i {
   color: #4f4f4f;
 }
 body header .container .buttons-header .btn-language {
+  min-width: 176px;
+  height: 37.6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11232,6 +11238,9 @@ body header .container .buttons-header .btn-language {
   cursor: pointer;
   font-family: sans-serif;
   font-size: 0.9rem;
+}
+body header .container .buttons-header .btn-language p {
+  min-width: 118px;
 }
 body header .container .buttons-header .btn-language .flag {
   height: 1.2rem;
