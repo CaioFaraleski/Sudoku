@@ -802,6 +802,16 @@ async function start() {
       pai.querySelectorAll('div').forEach(element => {
         element.innerText = '';
         element.style.backgroundColor = '#ffffff';
+
+        if (element.classList[3] === 'block') {
+          element.classList.remove('block');
+
+          if (element.classList[4] === 'selected') {
+            element.classList.remove('selected');
+          }
+        } else if (element.classList[3] === 'selected') {
+          element.classList.remove('selected');
+        }
       });
       setTimeout(() => {
         resolve();
@@ -825,6 +835,7 @@ async function start() {
       sudokuNumbers.push(object);
       element.innerText = '';
     });
+    console.log(sudokuNumbers);
     let sortedNumbers = [];
 
     for (let i = 0; i < 23; i++) {

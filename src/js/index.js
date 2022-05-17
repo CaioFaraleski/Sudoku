@@ -424,6 +424,14 @@ async function start() {
             pai.querySelectorAll('div').forEach(element => {
                 element.innerText = '';
                 element.style.backgroundColor = '#ffffff'
+                if (element.classList[3] === 'block') {
+                    element.classList.remove('block');
+                    if (element.classList[4] === 'selected') {
+                        element.classList.remove('selected')
+                    }
+                } else if (element.classList[3] === 'selected') {
+                    element.classList.remove('selected')
+                }
             })
 
             setTimeout(() => {
@@ -456,6 +464,7 @@ async function start() {
 
             element.innerText = '';
         });
+        console.log(sudokuNumbers)
 
         let sortedNumbers = [];
 
