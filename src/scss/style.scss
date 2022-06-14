@@ -344,3 +344,15 @@ body {
         width: 100%;
     }
 }
+
+@media (max-width: 1536px) {
+    html {
+        font-size: 12.3px;
+    }
+}
+
+@media (max-width: 1366px) {
+    html {
+        font-size: 10px;
+    }
+}
