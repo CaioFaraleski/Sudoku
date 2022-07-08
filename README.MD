@@ -1,6 +1,6 @@
 ## Sudoku
 
-<img href="" />![Preview-Screens](./src/assets/images/page.PNG)
+<img href="" />![Preview-Screens](./src/assets/images/sudoku-page.PNG)
 
 Se você quiser ver o projeto funcionando [CLIQUE AQUI](https://caiofaraleski.github.io/Sudoku/).
 
