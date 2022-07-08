@@ -10,8 +10,10 @@ a {
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     header {
-        height: 4rem;
+        height: 10vh;
         display: flex;
         justify-content: center;
         border-bottom: 0.5px solid #9d9d9d;
@@ -138,22 +140,20 @@ body {
         }
     }
     main {
+        height: 75vh;
         display: flex;
         justify-content: center;
         user-select: none;
         .game {
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
-            width: 70%;
-            height: 88vh;
-            padding: 0.8rem 0 0 0;
             .box1 {
+                padding: 0 5rem;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-                width: 57%;
-                height: 34rem;
                 .box-timer {
                     display: flex;
                     justify-content: space-around;
@@ -190,8 +190,8 @@ body {
                     }
                 }
                 .sudoku {
-                    width: 30rem;
-                    height: 30rem;
+                    width: 35rem;
+                    height: 35rem;
                     display: grid;
                     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -201,7 +201,7 @@ body {
                     #pause-page {
                         position: absolute;
                         display: flex;
-                        background-color: #979797;
+                        background-color: #d8d7d7;
                         i {
                             font-size: 5rem;
                         }
@@ -251,10 +251,10 @@ body {
                 }
             }
             .box2 {
-                width: 43%;
-                height: 34rem;
+                padding: 0 5rem;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 flex-direction: column;
                 .new-game {
                     width: 20rem;
@@ -338,6 +338,10 @@ body {
                 }
             }
         }
+    }
+    footer {
+        width: 100%;
+        height: 15vh;
     }
     figure img {
         height: 100%;
