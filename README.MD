@@ -2,7 +2,7 @@
 
 <img href="" />![Preview-Screens](./src/assets/images/page.PNG)
 
-Se você quiser ver o projeto funcionando [clique aqui](https://caiofaraleski.github.io/Sudoku/).
+Se você quiser ver o projeto funcionando [CLIQUE AQUI](https://caiofaraleski.github.io/Sudoku/).
 
 ## Sobre o projeto
 
